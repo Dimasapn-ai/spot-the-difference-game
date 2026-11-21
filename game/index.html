@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Hollow — Spot the Difference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <h1>Lantern Hollow</h1>
+    <p class="subtitle">Spot the Difference</p>
+  </div>
+  <div class="hud" id="hud">
+    <div class="hud-cell"><span class="hud-label">Level</span><span class="hud-value" id="hud-level">Lantern Market</span></div>
+    <div class="hud-cell"><span class="hud-label">Remaining</span><span class="hud-value"><span id="hud-remaining">7</span> / <span id="hud-total">7</span></span></div>
+    <div class="hud-cell"><span class="hud-label">Time</span><span class="hud-value" id="hud-timer">0:00</span></div>
+    <div class="hud-cell"><span class="hud-label">Score</span><span class="hud-value" id="hud-score">0</span></div>
+    <div class="hud-cell"><span class="hud-label">Hints</span><span class="hud-value" id="hud-hints">3</span></div>
+    <div class="hud-cell"><span class="hud-label">Misses</span><span class="hud-value" id="hud-misses">0</span></div>
+  </div>
+</header>
+<p class="tagline" id="hud-tag">A night market under paper lanterns — 7 differences to find.</p>
+
+<main class="stage">
+  <section class="panel">
+    <h2>Left picture</h2>
+    <canvas id="panel-left" width="620" height="460"></canvas>
+  </section>
+  <section class="panel">
+    <h2>Right picture</h2>
+    <canvas id="panel-right" width="620" height="460"></canvas>
+  </section>
+</main>
+
+<footer class="controls">
+  <button id="btn-hint" type="button">Hint (H) — circles one difference</button>
+  <button id="btn-menu" type="button">Levels (Esc)</button>
+  <button id="btn-mute" type="button">Sound: on</button>
+  <span class="keys">Click a difference on either picture · wrong clicks cost 5 seconds · keys 1–3 pick a level · R replays · N next level</span>
+</footer>
+
+<div class="overlay" id="menu-overlay">
+  <div class="card">
+    <h2>Find every difference</h2>
+    <p>Two pictures hang side by side. They look the same — they are not. Click each
+    difference on either picture to ring it in green. A wrong click costs 5 seconds and
+    a hint costs 25 points. Clear all three scenes to finish the hunt.</p>
+    <div class="level-list" id="level-list"></div>
+    <p class="fine">No downloads, no accounts — the whole game lives in these files.</p>
+  </div>
+</div>
+
+<div class="overlay hidden" id="win-overlay">
+  <div class="card">
+    <h2 id="win-title">Level complete!</h2>
+    <p id="win-stats"></p>
+    <div class="win-buttons">
+      <button id="btn-next" type="button">Next level (N)</button>
+      <button id="btn-replay" type="button">Replay (R)</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
